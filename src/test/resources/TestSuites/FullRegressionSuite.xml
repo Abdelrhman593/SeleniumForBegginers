@@ -3,7 +3,18 @@
 <suite name="Full Regression Suite" verbose="1">
 
     <!-- Positive Login Test -->
-    <test name="Positive Login Tests">
+    <test name="Positive Login Tests in Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.practicetestautomation.tests.Login.LoginTests">
+                <methods>
+                    <include name="testLoginFunctionality"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Positive Login Tests in Firefox">
+        <parameter name="browser" value="firefox"/>
         <classes>
             <class name="com.practicetestautomation.tests.Login.LoginTests">
                 <methods>
@@ -15,6 +26,7 @@
 
     <!-- Incorrect Username Test -->
     <test name="Incorrect Username Test">
+        <parameter name="browser" value="safari"/>
         <parameter name="username" value="incorrectusername"/>
         <parameter name="password" value="Password123"/>
         <parameter name="expectedErrorMessage" value="Your username is invalid!"/>
@@ -34,6 +46,7 @@
 
     <!-- Incorrect Password Test -->
     <test name="Incorrect Password Test">
+        <parameter name="browser" value="firefox"/>
         <parameter name="username" value="student"/>
         <parameter name="password" value="incorrectPassword"/>
         <parameter name="expectedErrorMessage" value="Your password is invalid!"/>
