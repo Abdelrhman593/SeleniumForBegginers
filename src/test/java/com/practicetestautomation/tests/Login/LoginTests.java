@@ -60,6 +60,7 @@ public class LoginTests  {
         // Push Submit button
         logger.info ("Clicking Submit button");
         WebElement submitButton = driver.findElement(By.id("submit"));
+        //WebElement submitButton = driver.findElement(By.xpath("//button"));
         submitButton.click();
 
         try {
