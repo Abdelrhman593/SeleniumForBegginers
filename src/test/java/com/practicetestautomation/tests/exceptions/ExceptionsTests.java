@@ -119,4 +119,18 @@ public class ExceptionsTests {
         Assert.assertEquals(SaveConfirmMsg.getText(), "Row 1 was saved");
 
     }
+
+    @Test
+    public void staleElementReferenceExceptionTests(){
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        //Locating the Instruction Message
+        WebElement instructionMsg = driver.findElement(By.id("instructions"));
+        //Click Add Button
+        WebElement addButton = driver.findElement(By.id("add_btn"));
+        addButton.click();
+        //Verify that the Instruction Message is no longer displayed
+       Assert.assertTrue (wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("instructions"))), "Instruction Message Still displayed");
+    }
 }
