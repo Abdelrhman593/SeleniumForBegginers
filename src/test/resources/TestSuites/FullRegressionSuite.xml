@@ -46,21 +46,22 @@
 
     <!-- Incorrect Password Test -->
     <test name="Incorrect Password Test">
-        <parameter name="browser" value="firefox"/>
-        <parameter name="username" value="student"/>
-        <parameter name="password" value="incorrectPassword"/>
-        <parameter name="expectedErrorMessage" value="Your password is invalid!"/>
-        <groups>
-            <run>
-                <exclude name="Positive"/>
-            </run>
-        </groups>
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="username" value="student"></parameter>
+        <parameter name="password" value="incorrectPassword"></parameter>
+        <parameter name="expectedErrorMessage" value="Your password is invalid!"></parameter>
         <classes>
             <class name="com.practicetestautomation.tests.Login.LoginTests">
                 <methods>
                     <include name="negativeLoginTest"/>
                 </methods>
             </class>
+        </classes>
+    </test>
+    <test name="Exceptions tests">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="com.practicetestautomation.tests.exceptions.ExceptionsTests"></class>
         </classes>
     </test>
 
